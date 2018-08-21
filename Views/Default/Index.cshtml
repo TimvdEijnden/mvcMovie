@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="jumbotron">
+            <h1>Hello, .NET! &#x1F4BB;</h1>
+            <p>This is an examaple project to be introduced to .NET, it used Entity Framework, LINQ & MVC. It uses packages from NuGet and is created in Visual Studio Community for MacOS.</p>
+            <a class="btn btn-primary btn-lg" asp-area="" asp-controller="Movies" asp-action="Index">View my Movies &#x1F37F;</span></a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>Application uses</h2>
+        <ul>
+            <li>The following tutorial has been followed: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/?view=aspnetcore-2.1</li>
+            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <h2>Problems encountered &#x1F6A8; &amp; solved &#x1F4A1; </h2>
+        <ul>
+            <li><code> 'DbContextOptionsBuilder' does not contain a definition for 'UseSqlite'</code> <strong>fixed by manually installing using Microsoft.EntityFrameworkCore.Sqlite</strong></li>
+            <li>Command <code>dotnet</code> was not working correctly, <strong>fixed by entering the project dir first</strong></li>
+            <li>Search field empty after submit, <strong>fixed by adding <code>searchString</code> to Model &Aacute; adding <code>asp-for</code></strong></li>
+            <li>Unable to drop DB, <strong>fixed stopping the running app first</strong></li>
+            <li>DB fields not updated after adding Rating, <strong>fixed by creating new migration and changing it</strong></li>
+            <li>Price showing up as <code>¤8.99</code> <strong>fixed by specifing <code>CultureInfo</code> in Startup</strong></li>
+
+
+        </ul>
+    </div>
+</div>
