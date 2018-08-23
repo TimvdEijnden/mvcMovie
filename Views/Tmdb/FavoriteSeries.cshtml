@@ -1,0 +1,21 @@
+@model MvcMovie.Responses.Series;
+
+@{
+    ViewData["Title"] = "TMdb Favorite TV Series";
+}
+
+<h2>My favorite TV Series from themoviedb.org &#x1F4FA</h2>
+<p>
+    They are fetched realtime using their API.
+</p>
+<div class="favorites">
+    @foreach (var serie in Model.results)
+    {
+        <div class="movie">
+            <img src="https://image.tmdb.org/t/p/w154/@serie.poster_path" align="left" />
+            <h3>Name: @serie.name</h3>
+            <p>First air date: @Html.DisplayFor(s => serie.first_air_date)</p>
+            <p>@serie.overview</p>
+        </div>
+    }
+</div>

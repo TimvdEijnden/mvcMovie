@@ -20,9 +20,11 @@ namespace MvcMovie
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
-        public IConfiguration Configuration { get; }
+        public IHostingEnvironment HostingEnvironment { get; private set; }
+        public IConfiguration Configuration { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -57,8 +59,7 @@ namespace MvcMovie
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            var cultureInfo = new CultureInfo("en-US");
-            cultureInfo.NumberFormat.CurrencySymbol = "€";
+            var cultureInfo = new CultureInfo("nl-NL");
 
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;

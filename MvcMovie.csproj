@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.6" />
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+    <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,8 +21,26 @@
   <ItemGroup>
     <Content Remove="Views\HelloWorld\Index.cshtml" />
     <Content Remove="Views\Home\Contact.cshtml" />
+    <Content Remove="bundleconfig.json" />
+    <Content Remove="Views\HelloWorld\Welcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\HelloWorldController.cs" />
+    <Compile Remove="bundleconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Dockerfile" />
+    <None Remove="Properties\PublishProfiles\dotnet-MvcMovie2 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\dotnet-MvcMovie2 - Docker.pubxml" />
+    <None Remove="Properties\PublishProfiles\dotnet-MvcMovie - Docker.pubxml" />
+    <None Remove="Properties\PublishProfiles\MvcMovie22 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\dotnet-MvcMovie - Web Deploy.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Views\Tmdb\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bundleconfig.json" />
   </ItemGroup>
 </Project>
